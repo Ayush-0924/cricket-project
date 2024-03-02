@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>cricket game</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>bat ball stump game</h1>    
+    <button onclick="
+    let randomnumber = Math.random() * 3;
+    let computerChoice;
+    if(randomnumber > 0 && randomnumber <= 1){
+        computerChoice = 'bat';
+    }else if(randomnumber > 1 && randomnumber<=2){
+        computerChoice = 'ball';
+    }else{
+        computerChoice = 'stump';
+    }
+    let resultmsg;
+    if(computerChoice == 'bat'){
+        resultmsg = `its a tie`;
+    }else if(computerChoice == 'ball'){
+        resultmsg = `you won`;
+    }else{
+        resultmsg = `computer won`;
+    }
+    let msg = `you have chosen bat.computers choice is ${computerChoice} and ${resultmsg}`;
+    alert(msg);
+    ">bat</button>
+    <button onclick="
+    let randomnumber = Math.random() * 3;
+    let computerChoice;
+    if(randomnumber > 0 && randomnumber <= 1){
+        computerChoice = 'bat';
+    }else if(randomnumber > 1 && randomnumber<=2){
+        computerChoice = 'ball';
+    }else{
+        computerChoice = 'stump';
+    }
+    let resultmsg;
+    if(computerChoice == 'ball'){
+        resultmsg = `its a tie`;
+    }else if(computerChoice == 'stump'){
+        resultmsg = `you won`;
+    }else{
+        resultmsg = `computer won`;
+    }
+    let msg = `you have chosen ball.computers choice is ${computerChoice} and ${resultmsg}`;
+    alert(msg);
+    ">ball</button>
+    <button onclick="
+    let randomnumber = Math.random() * 3;
+    let computerChoice;
+    if(randomnumber > 0 && randomnumber <= 1){
+        computerChoice = 'bat';
+    }else if(randomnumber > 1 && randomnumber<=2){
+        computerChoice = 'ball';
+    }else{
+        computerChoice = 'stump';
+    }
+    let resultmsg;
+    if(computerChoice == 'stump'){
+        resultmsg = `its a tie`;
+    }else if(computerChoice == 'bat'){
+        resultmsg = `you won`;
+    }else{
+        resultmsg = `computer won`;
+    }
+    let msg = `you have chosen stump.computers choice is ${computerChoice} and ${resultmsg}`;
+    alert(msg);
+    ">stump</button>
+</body>
+</html>
