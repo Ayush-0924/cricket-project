@@ -2,76 +2,66 @@
 <html lang="en">
 <head>
     <title>cricket game</title>
-    <style>
-        body{
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
-    <h1>bat ball stump game</h1>    
+    <h1>bat ball stump game</h1>
+     <button onclick="
+     let computerChoice = generateComputerChoice();
+     let resultMsg = getResult('Bat', computerChoice);
+     showResult('Bat', computerChoice, resultMsg);
+    ">Bat</button>
     <button onclick="
-    let randomnumber = Math.random() * 3;
-    let computerChoice;
-    if(randomnumber > 0 && randomnumber <= 1){
-        computerChoice = 'bat';
-    }else if(randomnumber > 1 && randomnumber<=2){
-        computerChoice = 'ball';
-    }else{
-        computerChoice = 'stump';
-    }
-    let resultmsg;
-    if(computerChoice == 'bat'){
-        resultmsg = `its a tie`;
-    }else if(computerChoice == 'ball'){
-        resultmsg = `you won`;
-    }else{
-        resultmsg = `computer won`;
-    }
-    let msg = `you have chosen bat.computers choice is ${computerChoice} and ${resultmsg}`;
-    alert(msg);
-    ">bat</button>
+     computerChoice = generateComputerChoice();
+    resultMsg = getResult('Ball', computerChoice);
+    showResult('Ball', computerChoice, resultMsg);
+    ">Ball</button>
     <button onclick="
-    let randomnumber = Math.random() * 3;
-    let computerChoice;
-    if(randomnumber > 0 && randomnumber <= 1){
-        computerChoice = 'bat';
-    }else if(randomnumber > 1 && randomnumber<=2){
-        computerChoice = 'ball';
-    }else{
-        computerChoice = 'stump';
+    computerChoice = generateComputerChoice();
+    resultMsg = getResult('Stump', computerChoice);
+    showResult('Stump', computerChoice, resultMsg);
+    ">Stump</button>
+    <script>
+        function generateComputerChoice(){
+            let randomnumber = Math.random*3;
+            if(randomnumber>0 && randomnumber<=1){
+                return 'Bat';
+            }else if(randomnumber>1 && randomnumber<=2){
+                return 'Ball';
+            }else{
+                return 'Stump';
+            }
+        }
+        function getResult(userMove,computerMove){
+            if (userMove === 'Bat') {
+        if (computerMove === 'Ball') {
+          return 'User won.';
+        } else if (computerMove === 'Bat') {
+          return `It's a tie`;
+        } else if (computerMove === 'Stump') {
+          return 'Computer has won';
+        }
+      } else if (userMove === 'Ball') {
+        if (computerMove === 'Ball') {
+          return `It's a tie`;
+        } else if (computerMove === 'Bat') {
+          return 'Computer has won';
+        } else if (computerMove === 'Stump') {
+          return 'User won.';
+        }
+      } else {
+        if (computerMove === 'Ball') {
+          return 'Computer has won';
+        } else if (computerMove === 'Bat') {
+          return 'User won.';
+        } else if (computerMove === 'Stump') {
+          return `It's a tie`;
+        }
+      }
     }
-    let resultmsg;
-    if(computerChoice == 'ball'){
-        resultmsg = `its a tie`;
-    }else if(computerChoice == 'stump'){
-        resultmsg = `you won`;
-    }else{
-        resultmsg = `computer won`;
+
+    function showResult(userMove, computerMove, result) {
+      alert(`You have chosen ${userMove}. Computer choice is ${computerMove} and ${result}`);
     }
-    let msg = `you have chosen ball.computers choice is ${computerChoice} and ${resultmsg}`;
-    alert(msg);
-    ">ball</button>
-    <button onclick="
-    let randomnumber = Math.random() * 3;
-    let computerChoice;
-    if(randomnumber > 0 && randomnumber <= 1){
-        computerChoice = 'bat';
-    }else if(randomnumber > 1 && randomnumber<=2){
-        computerChoice = 'ball';
-    }else{
-        computerChoice = 'stump';
-    }
-    let resultmsg;
-    if(computerChoice == 'stump'){
-        resultmsg = `its a tie`;
-    }else if(computerChoice == 'bat'){
-        resultmsg = `you won`;
-    }else{
-        resultmsg = `computer won`;
-    }
-    let msg = `you have chosen stump.computers choice is ${computerChoice} and ${resultmsg}`;
-    alert(msg);
-    ">stump</button>
+    </script>
 </body>
 </html>
