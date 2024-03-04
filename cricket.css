@@ -1,0 +1,24 @@
+body{
+    text-align: center;
+    background-color: azure;
+    font-family: "Shantell Sans", cursive;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings:
+    "BNCE" 0,
+    "INFM" 0,
+    "SPAC" 0;
+}
+.button-choice{
+    height: 100px;
+    width: 100px;
+    border: none;
+    margin: 10px;
+    background-color: rgb(188, 210, 225);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.image-choice{
+    height: 75px;
+}
